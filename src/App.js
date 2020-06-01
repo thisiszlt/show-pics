@@ -68,7 +68,7 @@ class App extends React.Component {
         key={pic}
       >
         <div style={{ position:"relative",display:"flex",alignItems:"center",height: winHeight, overflow: 'scroll',margin:"0 auto" }}>
-          <img src={`${index}.PNG`} alt="" style={{flex:"auto",height:"85%",objectFit:"cover"}}></img>
+          <img src={`${index}.PNG`} alt="" style={{flex:"auto",width:winWidth-50,objectFit:"cover"}}></img>
         </div>
       </Modal>);
     });
