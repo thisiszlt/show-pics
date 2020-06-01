@@ -6,7 +6,7 @@ const picData = Array.from(new Array(4)).map((val, index) => ({
   picture: index + ".PNG"
 }));
 const winHeight=window.innerHeight;
-// const winWidth = window.innerWidth;
+const winWidth = window.innerWidth;
 
 function closest(el, selector) {
   const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
@@ -62,12 +62,13 @@ class App extends React.Component {
         visible={this.state[pic]}
         transparent
         onClose={this.onClose(pic)}
+        closable={true}
         popup
         wrapProps={{ onTouchStart: this.onWrapTouchStart }}
         key={pic}
       >
-        <div style={{ position:"relative", height: winHeight-140, overflow: 'scroll' }}>
-          <img src={`${index}.PNG`} alt="" style={{height:"100%",objectFit:"cover"}}></img>
+        <div style={{ position:"relative",display:"flex",alignItems:"center",height: winHeight, overflow: 'scroll',margin:"0 auto" }}>
+          <img src={`${index}.PNG`} alt="" style={{flex:"auto",height:"85%",objectFit:"cover"}}></img>
         </div>
       </Modal>);
     });
